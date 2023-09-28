@@ -1,31 +1,49 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <header class="md:flex p-5 gap-5 bg-blue-50">
   <Astronav closeOnClick>
-    <div class=" fixed hidden md:flex md:justify-start md:align-start md:p-auto">
-        <img height="100px" width="100px" src="../../public/favicon.svg" alt="">
+    <div
+      class="text-2xl flex w-full justify-between md:text-4xl"
+    >
+      <a href="/">Nicholas Rosdahl</a>
+      <div class="block md:hidden">
+        <MenuIcon class="w-12 h-12 text-gray-800" />
+      </div>
     </div>
-      <div class=" text-2xl flex w-full justify-between md:translate-x-2/3 md:text-4xl">
-        <a href="/">Nicholas Rosdahl</a>
-        <div class="block md:hidden">
-            <MenuIcon class="w-12 h-12 text-gray-800" />
-        </div>
-    </div>
-    <div class="flex justify-center align-center md:hidden">
-        <img height="75px" width="75px" src="../../public/favicon.svg" alt="">
+    <div class="flex justify-center align-center md:static md:justify-center md:hidden">
+      <img height="75px" width="75px" src="/favicon.svg" alt="" />
     </div>
     <MenuItems class="hidden md:flex md:pt-12">
-      <ul class="flex flex-row mx-48 justify-between md:flex-row md:gap-10 md:mx-48 md:text-2xl">
-        <li>
-            <a href="/">About</a>
-
+      <ul
+      class="flex flex-row mx-48 justify-between md:flex-row md:gap-24 md:mx-48 md:text-2xl"
+      >
+      <li>
+        <a class={currentPath === "About" ? "active" : "/About"} href="/About"
+            >About</a
+          >
         </li>
         <li>
-            <a href="/">Portfolio</a>
+          <a
+          class={currentPath === "Portfolio" ? "active" : "/Portfolio"}
+          href="/Portfolio">Portfolio</a
+          >
         </li>
       </ul>
     </MenuItems>
   </Astronav>
+  
 </header>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .active {
+    color: #2563eb;
+  }
+</style>
