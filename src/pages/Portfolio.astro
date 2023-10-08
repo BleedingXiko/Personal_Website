@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import SimpleImageSlider from "react-simple-image-slider";
+import Desc from "../components/Desc.astro";
 
 const imgConfig = {
   href: [
@@ -39,11 +40,7 @@ let height = "80vh";
     </svg>
     
   </div>
-    <div class="text-center">
-    have each section give a breif explaination of what that section is about
-    and link to that page and treat it like switching tabs from the navabar
-    stackblitz + github integration test commit
-  </div>
+  <Desc text="Some of my projects"/>
   <Card title=""/>
   <div class="imgslider-container">
     <SimpleImageSlider
@@ -56,8 +53,9 @@ let height = "80vh";
     />
     <p class="img-links">
       <a href={imgConfig.href[0]}>Neural Bird</a>
-      <b> |</b>
-      <a href={imgConfig.href[1]}>Godot github contribution</a><b> |</b>
+      <b> | </b>
+      <a href={imgConfig.href[1]}>Godot github contribution</a>
+      <b> | </b>
       <a href={imgConfig.href[2]}>Portfolio Website</a>
     </p>
   </div>
@@ -65,6 +63,8 @@ let height = "80vh";
 </Layout>
 
 <style>
+
+
   line {
     stroke: var(--fg);
   }
