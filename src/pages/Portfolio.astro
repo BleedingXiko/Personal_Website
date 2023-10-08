@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ImageSlider from '../components/ImageSlider.tsx';
 import Card from '../components/Card.astro';
-
+import SimpleImageSlider from "react-simple-image-slider";
 
 const imgConfig = {
 href: ["https://neural-bird.netlify.app/", "https://github.com/godotengine/godot/pull/68625", "https://duetprosper-urbanjanet.codio.io/index.html"],
@@ -12,21 +12,43 @@ desc: ["Modified a neural network to be trained and executed on low resource har
 imgs: ["https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696702230/Project-11/bird_vwmz9g.png","https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696702230/Project-11/gogot_vo1jvy.png" ,"https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696702230/Project-11/p3_hs5bdc.png"],
 
 }
+
+let index = 0;
 ---
 
 <Layout title="Home">
 	<Card title=""/>
 	<div class="imgslider-container">
-		<ImageSlider desc={imgConfig.desc} href={imgConfig.href} urls={imgConfig.imgs} client:load/>
+		<SimpleImageSlider
+        width={900}
+        height={636}
+        images={imgConfig.imgs}
+        showBullets={true}
+        showNavs={true}
+       client:visible/>
+	   <p class="img-links">
+		<a href={imgConfig.imgs[0]}>Neural Bird</a> <b> | </b>
+		<a href={imgConfig.imgs[1]}>Godot github contribution</a><b> | </b>
+		<a href={imgConfig.imgs[2]}>Portfolio Website</a>
+	</p>
 	</div>
 	<Card title=""/>
 </Layout>
 
 <style>
+	
+	.img-links {
+		text-align: center;
+		margin-top: 20px;
+	}
+
 	.imgslider-container {
 		max-width: 1200px;
 		width: 100%;
-		aspect-ratio: 3/2;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

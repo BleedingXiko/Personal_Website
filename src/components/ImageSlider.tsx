@@ -25,9 +25,19 @@ export function ImageSlider({ urls, hrefs, desc }: any) {
 
 
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative" }}>
-      <h1>{desc[ImageIndex]}</h1>
-      <img className="slider-img" src={urls[ImageIndex]} alt="" />
+    <div className="container">
+      <div className="heading">
+      <h1>My Portfolio</h1>
+      <p>{desc[ImageIndex]}</p>
+      <a target="_blank" href={hrefs[ImageIndex]}>Link to project</a>
+
+      </div>
+       {urls.map(url => (
+      <img key={url[ImageIndex]} className="slider-img" src={url[ImageIndex]} alt="" />
+       ))}
+      <div>
+
+      </div>
       <button onClick={showPrevtImage} className="img-btn" style={{left: "0",}}>
         <ArrowBigLeft />
       </button>
