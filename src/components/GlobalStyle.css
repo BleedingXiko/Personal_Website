@@ -1,6 +1,7 @@
 :root {
   --bg: rgb(34, 40, 49);
   --bg_comp: rgb(57, 62, 70);
+  --bg_nav: rgba(57, 62, 70, 0.4);
   --fg: rgb(0, 173, 181);
   --comp: rgb(238, 238, 238);
 }
@@ -9,4 +10,52 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+@keyframes rainbowText {
+  0% {
+    color: #50fcff5a;
+  }
+  50% {
+    color: #2ecc71;
+  }
+  75% {
+    color: #f39c12;
+  }
+  100% {
+    color: #50fcff5a;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
