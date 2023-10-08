@@ -1,5 +1,6 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
@@ -49,8 +50,8 @@ const currentPath = pathname.slice(1);
 
 <style>
   header {
-    background-color: #f7fafc;
-    color: black;
+    background-color: var(--comp);
+    color: var(--bg_comp);
   }
 
   .hidden {
@@ -58,12 +59,12 @@ const currentPath = pathname.slice(1);
   }
 
   .active {
-    color: #2563eb;
+    color: var(--fg);
   }
 
   .active-home {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-color: #2563eb;
+    text-decoration-color: var(--fg);
   }
 </style>
