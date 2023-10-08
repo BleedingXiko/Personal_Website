@@ -29,6 +29,15 @@ let height = "80vh";
 ---
 
 <Layout title="Home">
+  <div class="mt-10">
+    <h1 class="text-4xl text-center">My Portfolio & Resume</h1>
+    <div class="flex justify-center justify-evenly">
+    </div>
+    <svg class="w-2/3 m-2 mt-4 mx-auto opacity-10" width="100%" height="10" transition:name="hero">
+      <line x1="5%" y1="5" x2="95%" y2="5" stroke="black" stroke-width="3"
+      ></line>
+    </svg>
+  </div>
   <Card title="" />
   <div class="imgslider-container">
     <SimpleImageSlider
@@ -50,6 +59,9 @@ let height = "80vh";
 </Layout>
 
 <style>
+  line {
+    stroke: var(--fg);
+  }
   .img-links {
     text-align: center;
     margin-top: 20px;
