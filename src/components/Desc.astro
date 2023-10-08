@@ -1,0 +1,19 @@
+---
+interface Props {
+    text?: string;
+  }
+
+const {text} = Astro.props;
+---
+ 
+ 
+<div class="text-center fade">
+    {text}
+</div>
+
+<style>
+  
+  div {
+    animation: 3s fadeInUp;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Desc from "../components/Desc.astro";
 ---
 
 <Layout title="Home">
@@ -27,15 +28,12 @@ import Card from "../components/Card.astro";
       ></line>
     </svg>
   </div>
-
-  <div>
-    have each section give a breif explaination of what that section is about
+  <Desc text="have each section give a breif explaination of what that section is about
     and link to that page and treat it like switching tabs from the navabar
-    stackblitz + github integration test commit
-  </div>
+    stackblitz + github integration test commit"/>
 
-  <Card title="About Me" client:visible/>
-  <Card title="Portfolio" client:visible/>
+  <Card title="About Me" />
+  <Card title="Portfolio" />
 </Layout>
 
 <style>

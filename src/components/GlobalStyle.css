@@ -12,6 +12,14 @@
   box-sizing: border-box;
 }
 
+.fadeOutUp {
+  animation: 1s fadeOutUp;
+}
+
+.fadeIn {
+  animation: 1s fadeIn;
+}
+
 @keyframes rainbowText {
   0% {
     color: #50fcff5a;
@@ -38,6 +46,18 @@
   }
 }
 
+.fade {
+  animation: 5s fade;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes fadeInUp {
   from {
     transform: translateY(20px);
