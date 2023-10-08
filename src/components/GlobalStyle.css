@@ -1,0 +1,12 @@
+:root {
+  --bg: rgb(34, 40, 49);
+  --bg_comp: rgb(57, 62, 70);
+  --fg: rgb(0, 173, 181);
+  --comp: rgb(238, 238, 238);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
