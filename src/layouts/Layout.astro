@@ -1,45 +1,41 @@
 ---
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-import '../components/GlobalStyle.astro';
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../components/GlobalStyle.astro";
 
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-
-
 ---
 
-
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <ViewTransitions />
-    </head>
-    <body class="bg">
-        <Nav    />
-        <slot />
-        <Footer />    
-    </body>
-    
-</html>
-
-<style >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg">
+    <Nav />
+    <slot />
+    <Footer />
+  </body><style>
     .bg {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        background-color: bisque;
-    
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: bisque;
     }
-</style>
+  </style>
 
-<script is:inline src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script
+    is:inline
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+</html>

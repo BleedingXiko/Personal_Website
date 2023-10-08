@@ -6,48 +6,48 @@ const currentPath = pathname.slice(1);
 
 <header class="md:flex p-5 gap-5">
   <Astronav closeOnClick>
-    <div
-      class="text-2xl flex w-full justify-between md:text-4xl"
-    >
-      <a class={currentPath === "" ? "active-home" : "/"} href="/">Nicholas Rosdahl</a>
+    <div class="text-2xl flex w-full justify-between md:text-4xl">
+      <a class={currentPath === "" ? "active-home" : "/"} href="/"
+        >Nicholas Rosdahl</a
+      >
       <div class="block md:hidden">
         <MenuIcon class="w-12 h-12 text-gray-800" />
       </div>
     </div>
-    <div class="flex justify-center align-center md:static md:justify-center md:hidden">
-      <a class={currentPath === "" ? "active" : "/"} href="/"
-      ><img height="75px" width="75px" src="/favicon.svg" alt="" /></a
+    <div
+      class="flex justify-center align-center md:static md:justify-center md:hidden"
     >
+      <a class={currentPath === "" ? "active" : "/"} href="/"
+        ><img height="75px" width="75px" src="/favicon.svg" alt="" /></a
+      >
     </div>
     <MenuItems class="hidden md:flex md:pt-12">
       <ul
-      class="flex flex-row mx-48 gap-20 justify-around md:flex-row md:gap-24 md:mx-48 md:text-2xl"
+        class="flex flex-row mx-48 gap-20 justify-around md:flex-row md:gap-24 md:mx-48 md:text-2xl"
       >
-      <li>
-        <a class={currentPath === "About" ? "active" : "/About"} href="/About"
+        <li>
+          <a class={currentPath === "About" ? "active" : "/About"} href="/About"
             >About</a
           >
         </li>
         <li>
           <a
-          class={currentPath === "Portfolio" ? "active" : "/Portfolio"}
-          href="/Portfolio">Portfolio</a
+            class={currentPath === "Portfolio" ? "active" : "/Portfolio"}
+            href="/Portfolio">Portfolio</a
           >
         </li>
       </ul>
     </MenuItems>
   </Astronav>
-  
 </header>
 
 <script>
   $(function () {
     console.log("hello");
-});
+  });
 </script>
 
 <style>
-
   header {
     background-color: #f7fafc;
     color: black;
