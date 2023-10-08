@@ -21,7 +21,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="bg">
-    <Nav />
+    <Nav client:load/>
     <slot />
     <Footer />
   </body><style>

@@ -5,7 +5,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<header class="md:flex p-5 gap-5">
+<header class="fadeIn md:flex p-5 gap-5">
   <Astronav closeOnClick>
     <div class="text-2xl flex w-full justify-between md:text-4xl">
       <a class={currentPath === "" ? "active-home" : "/"} href="/"
@@ -24,7 +24,7 @@ const currentPath = pathname.slice(1);
     </div>
     <MenuItems class="hidden md:flex md:pt-12">
       <ul
-        class="flex flex-row mx-48 gap-20 justify-around md:flex-row md:gap-24 md:mx-48 md:text-2xl"
+        class="fadeIn flex flex-row mx-48 gap-20 justify-around md:flex-row md:gap-24 md:mx-48 md:text-2xl"
       >
         <li>
           <a class={currentPath === "About" ? "active" : "/About"} href="/About"
@@ -43,16 +43,30 @@ const currentPath = pathname.slice(1);
 </header>
 
 <script>
-  $(function () {
-  });
+$(function() {
+    $('button').on("click", function(e) {
+      $("ul").addClass('fadeIn');
+    })
+    $('a').on("click", function(e) {
+      $("ul").removeClass('fadeIn');
+    })
+});
 </script>
 
 <style>
   header {
-    animation: 3s fadeIn;
     background-color: var(--bg_nav);
     color: var(--comp);
   }
+
+  .fadeOutUp {
+    animation: 1s fadeOutUp;
+  }
+
+  .fadeIn {
+    animation: 1s fadeIn;
+  }
+
 
   .hidden {
     display: none;
