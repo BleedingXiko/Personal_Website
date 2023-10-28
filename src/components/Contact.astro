@@ -7,7 +7,7 @@
 </form>
 
 <script>
-    //on each page swap
+    //On each page swap
     document.addEventListener('astro:after-swap', () => {
     $(function () {
         $('#submitBtn').on("click", function (e) {
@@ -22,7 +22,7 @@
                 message: message,
             };
             const formDataJSON = JSON.stringify(formData);
-            // You can perform further actions with the formData here
+            // No need to console log this was just for testing
             console.log(formDataJSON);
 
             // Clear the form fields
@@ -30,13 +30,13 @@
             $('#email').val('');
             $('#message').val('');
 
-            // Build the success message
+            // Set the success message
             const successMessage = "Form submitted successfully! JSON Data: " + formDataJSON;
 
             // Display the success message
             $('#successMessage').text(successMessage).show();
 
-            // Set a timer to hide the success message after 3 seconds (3000 milliseconds)
+            // Set a timer to hide the success message after 5 seconds
             setTimeout(function () {
                 $('#successMessage').fadeOut();
             }, 5000);
@@ -44,7 +44,7 @@
     });
 });
 
-//on initial page load
+//On initial page load
 $(function () {
         $('#submitBtn').on("click", function (e) {
             e.preventDefault();
@@ -58,7 +58,7 @@ $(function () {
                 message: message,
             };
             const formDataJSON = JSON.stringify(formData);
-            // You can perform further actions with the formData here
+            // No need to console log this was just for testing
             console.log(formDataJSON);
 
             // Clear the form fields
@@ -66,13 +66,13 @@ $(function () {
             $('#email').val('');
             $('#message').val('');
 
-            // Build the success message
+            // Set the success message
             const successMessage = "Form submitted successfully! JSON Data: " + formDataJSON;
 
             // Display the success message
             $('#successMessage').text(successMessage).show();
 
-            // Set a timer to hide the success message after 3 seconds (3000 milliseconds)
+            // Set a timer to hide the success message after 5 seconds
             setTimeout(function () {
                 $('#successMessage').fadeOut();
             }, 5000);
