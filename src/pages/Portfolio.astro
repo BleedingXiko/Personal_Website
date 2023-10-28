@@ -9,22 +9,24 @@ const imgConfig = {
     "https://neural-bird.netlify.app/",
     "https://github.com/godotengine/godot/pull/68625",
     "https://bleedingxiko.github.io/CO_project_12/",
+    "https://github.com/BleedingXiko/recipe",
   ],
 
   desc: [
     "Modified a neural network to be trained and executed on low resource hardware (Web browser & Meta Quest 2",
     "Adapted to a large scale project's codebase and added a requested feature",
     "Trivia game made with HTML, CSS, and JQuery",
+    "recipe site made with Astro, Tailwind, and Netlify"
   ],
 
   imgs: [
     "https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696702230/Project-11/bird_vwmz9g.png",
     "https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696702230/Project-11/gogot_vo1jvy.png",
     "https://res.cloudinary.com/dpfu8nq5k/image/upload/v1696801436/Project-11/12_cf5uie.png",
+    "https://res.cloudinary.com/dpfu8nq5k/image/upload/v1697911432/Project-11/Screenshot_2023-10-21_110200_dowgcv.png",
   ],
 };
 
-let index = 0;
 let width = "70vw";
 let height = "80vh";
 ---
@@ -57,6 +59,8 @@ let height = "80vh";
        <a href={imgConfig.href[1]} class="tooltip">Godot Contributions<span class="tooltiptext">{imgConfig.desc[1]}</span></a>
       <b> | </b>
        <a href={imgConfig.href[2]} class="tooltip">Trivia Game<span class="tooltiptext">{imgConfig.desc[2]}</span></a>
+      <b> | </b>
+       <a href={imgConfig.href[3]} class="tooltip">Recipe Website<span class="tooltiptext">{imgConfig.desc[3]}</span></a>
     </p>
   </div>
   <Card title=""/>
