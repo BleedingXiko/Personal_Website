@@ -1,0 +1,88 @@
+<form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button type="button" id="submitBtn">Submit</button>
+    <div id="successMessage" style="display: none;"></div>
+</form>
+
+<script>
+    $(function () {
+        $('#submitBtn').on("click", function (e) {
+            e.preventDefault();
+            const name = $('#name').val();
+            const email = $('#email').val();
+            const message = $('#message').val();
+
+            const formData = {
+                name: name,
+                email: email,
+                message: message,
+            };
+            const formDataJSON = JSON.stringify(formData);
+            // You can perform further actions with the formData here
+            console.log(formDataJSON);
+
+            // Clear the form fields
+            $('#name').val('');
+            $('#email').val('');
+            $('#message').val('');
+
+            // Build the success message
+            const successMessage = "Form submitted successfully! JSON Data: " + formDataJSON;
+
+            // Display the success message
+            $('#successMessage').text(successMessage).show();
+
+            // Set a timer to hide the success message after 3 seconds (3000 milliseconds)
+            setTimeout(function () {
+                $('#successMessage').fadeOut();
+            }, 5000);
+        });
+    });
+</script>
+
+<style>
+
+        form {
+            max-width: 400px;
+            margin: 15px auto;
+            background-color: var(--comp);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--fg);
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+        }
+
+        button {
+            background-color: var(--fg);
+            color: var(--comp);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #successMessage {
+            display: none;
+            background-color: var(--bg_comp);
+            color: var(--comp);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+</style>

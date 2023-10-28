@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import "../components/GlobalStyle.css";
 
 import { ViewTransitions } from "astro:transitions";
+import Contact from "../components/Contact.astro";
 
 interface Props {
   title: string;
@@ -25,6 +26,7 @@ const { title } = Astro.props;
   <body class="bg"> 
     <Nav />
     <slot />
+    <Contact  />
     <Footer />
   </body><style>
     .bg {
