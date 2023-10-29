@@ -7,14 +7,40 @@
 </form>
 
 <script>
-    //On each page swap
     document.addEventListener('astro:after-swap', () => {
-    $(function () {
         $('#submitBtn').on("click", function (e) {
             e.preventDefault();
+
+            // Get the values from the form
             const name = $('#name').val();
             const email = $('#email').val();
             const message = $('#message').val();
+
+            // Remove previous validation highlighting
+            $('#name, #email, #message').removeClass("error");
+
+            // Validate the input fields
+            if (name.trim() === "") {
+                $('#name').addClass("error");
+            }
+            if (email.trim() === "") {
+                $('#email').addClass("error");
+            }
+            if (message.trim() === "") {
+                $('#message').addClass("error");
+            }
+
+            // Validate the email format using a regex
+            const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+            if (!email.match(emailRegex)) {
+                $('#email').addClass("error");
+            }
+
+            // Check if any input fields have the "error" class
+            if ($('#contactForm .error').length > 0) {
+                // Highlight invalid fields and prevent form submission
+                return;
+            }
 
             const formData = {
                 name: name,
@@ -22,8 +48,6 @@
                 message: message,
             };
             const formDataJSON = JSON.stringify(formData);
-            // No need to console log this was just for testing
-            console.log(formDataJSON);
 
             // Clear the form fields
             $('#name').val('');
@@ -42,15 +66,43 @@
             }, 5000);
         });
     });
-});
 
-//On initial page load
-$(function () {
-        $('#submitBtn').on("click", function (e) {
+
+    // astro workaround for page load and swap
+    $(function() {
+           $('#submitBtn').on("click", function (e) {
             e.preventDefault();
+
+            // Get the values from the form
             const name = $('#name').val();
             const email = $('#email').val();
             const message = $('#message').val();
+
+            // Remove previous validation highlighting
+            $('#name, #email, #message').removeClass("error");
+
+            // Validate the input fields
+            if (name.trim() === "") {
+                $('#name').addClass("error");
+            }
+            if (email.trim() === "") {
+                $('#email').addClass("error");
+            }
+            if (message.trim() === "") {
+                $('#message').addClass("error");
+            }
+
+            // Validate the email format using a regex
+            const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+            if (!email.match(emailRegex)) {
+                $('#email').addClass("error");
+            }
+
+            // Check if any input fields have the "error" class
+            if ($('#contactForm .error').length > 0) {
+                // Highlight invalid fields and prevent form submission
+                return;
+            }
 
             const formData = {
                 name: name,
@@ -58,8 +110,6 @@ $(function () {
                 message: message,
             };
             const formDataJSON = JSON.stringify(formData);
-            // No need to console log this was just for testing
-            console.log(formDataJSON);
 
             // Clear the form fields
             $('#name').val('');
@@ -80,7 +130,11 @@ $(function () {
     });
 </script>
 
+
 <style>
+   #contactForm .error {
+        border: 2px solid red;
+    }
 
         form {
             max-width: 400px;
